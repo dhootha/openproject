@@ -73,7 +73,8 @@ class CustomField < ActiveRecord::Base
 
   validate :validate_default_value_in_translations
 
-  validate :validate_name
+  # FIXME: Rails 4/Globalize 4: clean-up CustomField validations
+  # validate :validate_name
 
   validates :min_length, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :max_length, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
